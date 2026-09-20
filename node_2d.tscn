@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://jwe1wprmky7y"]
+
+[ext_resource type="Texture2D" uid="uid://c6xanr8qvsf0h" path="res://icon.svg" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=1712719639]
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1610434904]
+position = Vector2(152.00002, 205.00002)
+scale = Vector2(0.23046891, 0.23046891)
+texture = ExtResource("1_wtcfe")
+
+[node name="Car" type="Sprite2D" parent="." unique_id=1873943730]
+position = Vector2(68.00001, 199)
+scale = Vector2(0.80468744, 0.19677804)
+texture = ExtResource("1_wtcfe")
+
+[node name="Wheel" type="Sprite2D" parent="Car" unique_id=221148835]
+position = Vector2(-35.51219, 72.32527)
+scale = Vector2(0.24390244, 0.5365854)
+texture = ExtResource("1_wtcfe")
+
+[node name="Wheel2" type="Sprite2D" parent="Car" unique_id=1770718348]
+position = Vector2(38.634148, 66.08133)
+scale = Vector2(0.21951221, 0.60162604)
+texture = ExtResource("1_wtcfe")
+
+[node name="Floor" type="Sprite2D" parent="." unique_id=1126065757]
+position = Vector2(256, 253)
+scale = Vector2(4.109375, 0.5246339)
+texture = ExtResource("1_wtcfe")
