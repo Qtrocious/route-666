@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://b3s6msefhff5q"]
+
+[ext_resource type="PackedScene" uid="uid://ce3t7pnj0hp25" path="res://scenes/ground.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dmh44wd7exiuy" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://df1o4hq15red5" path="res://scenes/character_body_2d_DEANWINCHESTER.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://c2hcme0jrixl3" path="res://scenes/hud.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://dl5di6v3t34by" path="res://scenes/car.gd" id="5_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cd8teq3b66ony" path="res://art/car.png" id="6_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://r564s4qmj6ph" path="res://art/wheel.png" id="6_tipki"]
+
+[node name="Main" type="Node" unique_id=1321337544]
+script = ExtResource("1_sugp2")
+
+[node name="ground" parent="." unique_id=1513237494 instance=ExtResource("1_0wfyh")]
+
+[node name="Ground2" parent="." unique_id=583692200 instance=ExtResource("1_0wfyh")]
+
+[node name="Player_Dean" parent="." unique_id=1271060915 instance=ExtResource("2_sugp2")]
+position = Vector2(-62, 142)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1172621571]
+position = Vector2(240, 135)
+
+[node name="HUD" parent="." unique_id=170176015 instance=ExtResource("4_jyhfs")]
+
+[node name="Car" type="Node2D" parent="." unique_id=962854211]
+position = Vector2(-39, 43)
+script = ExtResource("5_tefeu")
+
+[node name="CarBody" type="Sprite2D" parent="Car" unique_id=1879844521]
+position = Vector2(0, -15)
+scale = Vector2(1.452, 1.6)
+texture = ExtResource("6_o6xl0")
+
+[node name="Wheel2" type="Sprite2D" parent="Car" unique_id=503925068]
+position = Vector2(-16, 11.999999)
+scale = Vector2(0.8750003, 0.7500004)
+texture = ExtResource("6_tipki")
+
+[node name="Wheel" type="Sprite2D" parent="Car" unique_id=131461718]
+position = Vector2(16, 12)
+scale = Vector2(0.8749999, 0.7500005)
+texture = ExtResource("6_tipki")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1988579427]
+wait_time = 1.5
+autostart = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=711867406]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1935341371]
+position = Vector2(-145, -27)
+motion_offset = Vector2(100, 0)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer" unique_id=189313912]
+offset_right = 994.0
+offset_bottom = 396.0
+color = Color(0.0799085, 0.08419878, 0.15783128, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1737009269]
+position = Vector2(242, -5)
+lifetime = 10.0
+lifetime_randomness = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(250, 1)
+gravity = Vector2(0, 100)
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

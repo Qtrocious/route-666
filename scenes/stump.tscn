@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c34i0jnggh8jy"]
+
+[ext_resource type="Script" uid="uid://36tj6rsos41c" path="res://scenes/stump.gd" id="1_qs86r"]
+[ext_resource type="Texture2D" uid="uid://kw7dmwv7xvbi" path="res://art/eye obstacle.png" id="2_qs86r"]
+
+[node name="Stump" type="Area2D" unique_id=1584823574]
+script = ExtResource("1_qs86r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1398514253]
+scale = Vector2(1, 1.125)
+texture = ExtResource("2_qs86r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1540927628]
+scale = Vector2(0.125, 0.140625)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

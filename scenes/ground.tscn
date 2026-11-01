@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ce3t7pnj0hp25"]
+
+[ext_resource type="Texture2D" uid="uid://dngc5yshx77ws" path="res://art/ground.png" id="1_pybca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi8v4"]
+size = Vector2(961, 129)
+
+[node name="ground" type="StaticBody2D" unique_id=1513237494]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1708047786]
+position = Vector2(488, 272)
+scale = Vector2(15, 3.9999998)
+texture = ExtResource("1_pybca")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://art/ground.aseprite",
+"source_uid": 8515670807406033471
+}
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1535779887]
+position = Vector2(479.5, 271.5)
+shape = SubResource("RectangleShape2D_mi8v4")
